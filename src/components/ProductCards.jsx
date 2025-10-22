@@ -22,10 +22,7 @@ export default function ProductCards(){
           >
             <picture>
               {p.imageWebp && (
-                <source
-                  type="image/webp"
-                  srcSet={`${p.imageWebp.replace('.webp','-400.webp')} 400w, ${p.imageWebp.replace('.webp','-800.webp')} 800w, ${p.imageWebp.replace('.webp','-1200.webp')} 1200w`}
-                />
+                <source type="image/webp" srcSet={p.imageWebpSet || p.imageWebp} />
               )}
               <img
                 src={p.image}

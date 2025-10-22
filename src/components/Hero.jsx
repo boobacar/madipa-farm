@@ -2,6 +2,9 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import heroimg from "../assets/hero.jpg";
 import heroWebp from "../assets/hero.webp";
+import hero800Webp from "../assets/hero-800.webp";
+import hero1200Webp from "../assets/hero-1200.webp";
+import hero1600Webp from "../assets/hero-1600.webp";
 import milk from "../assets/milk.jpg";
 import milkWebp from "../assets/milk.webp";
 import cows from "../assets/cows.jpg";
@@ -63,11 +66,7 @@ export default function Hero() {
               animate={{opacity:1, y:0}}
               transition={{duration:.6, delay:.1}}
             >
-              <source
-                type="image/webp"
-                srcSet={`${heroWebp.replace('.webp','-800.webp')} 800w, ${heroWebp.replace('.webp','-1200.webp')} 1200w, ${heroWebp.replace('.webp','-1600.webp')} 1600w`}
-                sizes="(min-width: 1024px) 50vw, 100vw"
-              />
+              <source type="image/webp" srcSet={`${hero800Webp} 800w, ${hero1200Webp} 1200w, ${hero1600Webp} 1600w`} sizes="(min-width: 1024px) 50vw, 100vw" />
               <img
                 src={heroimg}
                 alt="Ferme et production laitière"

@@ -35,7 +35,7 @@ export default function Gallery(){
             >
               <picture>
                 {g.srcWebp && (
-                  <source type="image/webp" srcSet={`${g.srcWebp.replace('.webp','-400.webp')} 400w, ${g.srcWebp.replace('.webp','-800.webp')} 800w, ${g.srcWebp.replace('.webp','-1200.webp')} 1200w`} />
+                  <source type="image/webp" srcSet={g.srcWebpSet || g.srcWebp} />
                 )}
                 <img
                   src={g.src}
@@ -78,7 +78,7 @@ export default function Gallery(){
             >
               <picture>
                 {g.srcWebp && (
-                  <source type="image/webp" srcSet={`${g.srcWebp.replace('.webp','-400.webp')} 400w, ${g.srcWebp.replace('.webp','-800.webp')} 800w, ${g.srcWebp.replace('.webp','-1200.webp')} 1200w`} />
+                  <source type="image/webp" srcSet={g.srcWebpSet || g.srcWebp} />
                 )}
                 <img
                   src={g.src}

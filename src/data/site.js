@@ -1,15 +1,33 @@
 import milk from "../assets/milk.jpg";
 import milkWebp from "../assets/milk.webp";
+import milk400Webp from "../assets/milk-400.webp";
+import milk800Webp from "../assets/milk-800.webp";
+import milk1200Webp from "../assets/milk-1200.webp";
 import cows from "../assets/cows.jpg";
 import cowsWebp from "../assets/cows.webp";
+import cows400Webp from "../assets/cows-400.webp";
+import cows800Webp from "../assets/cows-800.webp";
+import cows1200Webp from "../assets/cows-1200.webp";
 import guinar from "../assets/guinar.jpg";
 import guinarWebp from "../assets/guinar.webp";
+import guinar400Webp from "../assets/guinar-400.webp";
+import guinar800Webp from "../assets/guinar-800.webp";
+import guinar1200Webp from "../assets/guinar-1200.webp";
 import etable from "../assets/etable.jpg";
 import etableWebp from "../assets/etable.webp";
+import etable400Webp from "../assets/etable-400.webp";
+import etable800Webp from "../assets/etable-800.webp";
+import etable1200Webp from "../assets/etable-1200.webp";
 import jeune from "../assets/jeune.jpg";
 import jeuneWebp from "../assets/jeune.webp";
+import jeune400Webp from "../assets/jeune-400.webp";
+import jeune800Webp from "../assets/jeune-800.webp";
+import jeune1200Webp from "../assets/jeune-1200.webp";
 import produits from "../assets/produits.jpg";
 import produitsWebp from "../assets/produits.webp";
+import produits400Webp from "../assets/produits-400.webp";
+import produits800Webp from "../assets/produits-800.webp";
+import produits1200Webp from "../assets/produits-1200.webp";
 
 export const site = {
   brand: "Madipa Farm",
@@ -85,6 +103,7 @@ export const site = {
       priceHint: "sur devis",
       image: milk,
       imageWebp: milkWebp,
+      imageWebpSet: `${milk400Webp} 400w, ${milk800Webp} 800w, ${milk1200Webp} 1200w`,
     },
     {
       title: "Volaille & œufs",
@@ -92,6 +111,7 @@ export const site = {
       priceHint: "sur commande",
       image: guinar,
       imageWebp: guinarWebp,
+      imageWebpSet: `${guinar400Webp} 400w, ${guinar800Webp} 800w, ${guinar1200Webp} 1200w`,
     },
     {
       title: "Chevreaux / Bovins sélectionnés",
@@ -99,6 +119,7 @@ export const site = {
       priceHint: "à discuter",
       image: cows,
       imageWebp: cowsWebp,
+      imageWebpSet: `${cows400Webp} 400w, ${cows800Webp} 800w, ${cows1200Webp} 1200w`,
     },
   ],
   services: [
@@ -143,12 +164,12 @@ export const site = {
     },
   ],
   gallery: [
-    { src: cows, srcWebp: cowsWebp, alt: "Bovins au pâturage" },
-    { src: milk, srcWebp: milkWebp, alt: "Traite et hygiène du lait" },
-    { src: guinar, srcWebp: guinarWebp, alt: "Élevage de volaille" },
-    { src: jeune, srcWebp: jeuneWebp, alt: "Jeune agricultrice" },
-    { src: etable, srcWebp: etableWebp, alt: "Étable propre" },
-    { src: produits, srcWebp: produitsWebp, alt: "Produits laitiers" },
+    { src: cows, srcWebp: cowsWebp, srcWebpSet: `${cows400Webp} 400w, ${cows800Webp} 800w, ${cows1200Webp} 1200w`, alt: "Bovins au pâturage" },
+    { src: milk, srcWebp: milkWebp, srcWebpSet: `${milk400Webp} 400w, ${milk800Webp} 800w, ${milk1200Webp} 1200w`, alt: "Traite et hygiène du lait" },
+    { src: guinar, srcWebp: guinarWebp, srcWebpSet: `${guinar400Webp} 400w, ${guinar800Webp} 800w, ${guinar1200Webp} 1200w`, alt: "Élevage de volaille" },
+    { src: jeune, srcWebp: jeuneWebp, srcWebpSet: `${jeune400Webp} 400w, ${jeune800Webp} 800w, ${jeune1200Webp} 1200w`, alt: "Jeune agricultrice" },
+    { src: etable, srcWebp: etableWebp, srcWebpSet: `${etable400Webp} 400w, ${etable800Webp} 800w, ${etable1200Webp} 1200w`, alt: "Étable propre" },
+    { src: produits, srcWebp: produitsWebp, srcWebpSet: `${produits400Webp} 400w, ${produits800Webp} 800w, ${produits1200Webp} 1200w`, alt: "Produits laitiers" },
   ],
   posts: [
     {
