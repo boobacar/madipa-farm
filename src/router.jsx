@@ -4,7 +4,7 @@ import ScrollToTop from './components/ScrollToTop.jsx'
 import Footer from './components/Footer.jsx'
 import WhatsAppButton from './components/WhatsAppButton.jsx'
 import ScrollProgress from './components/ScrollProgress.jsx'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
 import Home from './pages/Home.jsx'
 import Farm from './pages/Farm.jsx'
 import Products from './pages/Products.jsx'
@@ -18,18 +18,19 @@ import NotFound from './pages/NotFound.jsx'
 export default function App() {
   const location = useLocation()
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <ScrollProgress />
-      <ScrollToTop />
-      <main className="flex-1 overflow-x-hidden pt-16">
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.div key={location.pathname}
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 8 }}
-            transition={{ duration: .2 }}
-          >
+    <MotionConfig reducedMotion="never">
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <ScrollProgress />
+        <ScrollToTop />
+        <main className="flex-1 overflow-x-hidden pt-16">
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div key={location.pathname}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 8 }}
+              transition={{ duration: .25 }}
+            >
         <Routes location={location}>
           <Route path="/" element={<Home />} />
           <Route path="/farm" element={<Farm />} />
@@ -41,11 +42,12 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-          </motion.div>
-        </AnimatePresence>
-      </main>
-      <Footer />
-      <WhatsAppButton />
-    </div>
+            </motion.div>
+          </AnimatePresence>
+        </main>
+        <Footer />
+        <WhatsAppButton />
+      </div>
+    </MotionConfig>
   )
 }
