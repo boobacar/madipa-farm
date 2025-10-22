@@ -2,19 +2,22 @@ import { useEffect, useRef, useState } from 'react'
 
 function CountUp({ value, duration = 1200, prefix = '', suffix = '', play = true }){
   const [n, setN] = useState(0)
+  const rafRef = useRef(0)
   useEffect(() => {
     if(!play) return
-    let raf, start
+    cancelAnimationFrame(rafRef.current)
+    const start = performance.now()
     setN(0)
-    const easeOutCubic = t => 1 - Math.pow(1 - t, 3)
-    const step = ts => {
-      if(!start) start = ts
-      const p = Math.min(1, (ts - start) / duration)
-      setN(Math.round(value * easeOutCubic(p)))
-      if (p < 1) raf = requestAnimationFrame(step)
+    const ease = (t) => 1 - Math.pow(1 - t, 3)
+    const tick = (now) => {
+      const p = Math.min(1, (now - start) / duration)
+      if (p >= 1) { setN(value); return }
+      const next = Math.floor(value * ease(p))
+      setN(next)
+      rafRef.current = requestAnimationFrame(tick)
     }
-    raf = requestAnimationFrame(step)
-    return () => cancelAnimationFrame(raf)
+    rafRef.current = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(rafRef.current)
   }, [value, duration, play])
   const formatted = new Intl.NumberFormat('fr-FR').format(n)
   return <>{prefix}{formatted}{suffix}</>
@@ -46,7 +49,7 @@ export default function Stats(){
       <div className="container-xl grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         {items.map((it)=> (
           <div key={it.label} className="card transition hover:-translate-y-1 hover:shadow-lg">
-            <div className="text-3xl font-bold text-primary">
+            <div className="text-3xl font-bold text-primary tabular-nums">
               <CountUp play={play} value={it.value} prefix={it.prefix} suffix={it.suffix} />
             </div>
             <div className="text-slate-600">{it.label}</div>
