@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="100%" height="100%" fill="#eef2ff"/>
+  <text x="80" y="140" fill="#3730a3" font-size="56" font-weight="800" font-family="system-ui, -apple-system, Segoe UI, Roboto">Étable propre</text>
+  <text x="80" y="740" fill="#4f46e5" font-size="26" font-family="system-ui, -apple-system, Segoe UI, Roboto">Image de remplacement</text>
+</svg>
