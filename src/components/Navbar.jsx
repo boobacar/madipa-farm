@@ -11,8 +11,8 @@ export default function Navbar() {
   const goTopAndClose = () => { try { window.scrollTo({ top: 0, behavior: 'smooth' }) } catch { window.scrollTo(0,0) } close() }
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur border-b relative">
-        <div className="container-xl flex items-center justify-between py-3">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur border-b h-16">
+        <div className="container-xl flex items-center justify-between h-16">
           <Link to="/" onClick={close} className="text-xl font-bold text-primary">Madipa Farm</Link>
           <nav className="hidden md:block">
             <ul className="flex gap-2 items-center">

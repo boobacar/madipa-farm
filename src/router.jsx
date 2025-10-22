@@ -22,7 +22,7 @@ export default function App() {
       <Navbar />
       <ScrollProgress />
       <ScrollToTop />
-      <main className="flex-1 overflow-x-hidden">
+      <main className="flex-1 overflow-x-hidden pt-16">
         <AnimatePresence mode="wait" initial={false}>
           <motion.div key={location.pathname}
             initial={{ opacity: 0, y: 8 }}
