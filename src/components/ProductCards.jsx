@@ -18,9 +18,9 @@ export default function ProductCards(){
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
             transition={{ duration: .35, delay: i * 0.06 }}
-            className="card group transition hover:-translate-y-1 hover:shadow-lg hover:ring-2 hover:ring-secondary/30"
+            className="card group transition hover:-translate-y-1 hover:shadow-lg hover:ring-2 hover:ring-secondary/30 select-none touch-manipulation"
           >
-            <picture>
+            <picture className="select-none">
               {p.imageWebp && (
                 <source type="image/webp" srcSet={p.imageWebpSet || p.imageWebp} />
               )}
@@ -31,6 +31,7 @@ export default function ProductCards(){
                 loading="lazy"
                 decoding="async"
                 sizes="(max-width: 768px) 100vw, 33vw"
+                draggable={false}
                 onError={(e)=>{
                   e.currentTarget.onerror=null;
                   const t = p.title.toLowerCase();

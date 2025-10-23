@@ -1,4 +1,5 @@
 import { site } from '../data/site'
+import { FaTiktok, FaYoutube, FaFacebook } from 'react-icons/fa'
 
 export default function Footer(){
   return (
@@ -18,11 +19,20 @@ export default function Footer(){
         </div>
         <div>
           <h4 className="font-semibold">Réseaux</h4>
-          <ul className="text-slate-600 mt-2 space-y-1">
-            <li><a className="underline" href={site.social.tiktok} target="_blank" rel="noreferrer">TikTok</a></li>
-            <li><a className="underline" href={site.social.youtube}>YouTube</a></li>
-            <li><a className="underline" href={site.social.facebook}>Facebook</a></li>
-          </ul>
+          <div className="flex items-center gap-3 mt-3">
+            <a href={site.social.tiktok} target="_blank" rel="noreferrer" aria-label="TikTok" className="p-3 rounded-full border hover:bg-cream transition">
+              <FaTiktok />
+              <span className="sr-only">TikTok</span>
+            </a>
+            <a href={site.social.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="p-3 rounded-full border hover:bg-cream transition">
+              <FaYoutube />
+              <span className="sr-only">YouTube</span>
+            </a>
+            <a href={site.social.facebook} target="_blank" rel="noreferrer" aria-label="Facebook" className="p-3 rounded-full border hover:bg-cream transition">
+              <FaFacebook />
+              <span className="sr-only">Facebook</span>
+            </a>
+          </div>
         </div>
       </div>
       <div className="text-center text-sm text-slate-500 pb-6">© Madipa Farm — Dakar, Sénégal</div>

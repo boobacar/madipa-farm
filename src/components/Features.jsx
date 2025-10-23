@@ -22,7 +22,7 @@ export default function Features(){
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-10% 0px -10% 0px' }}
             transition={{ duration: .35, delay: i * 0.06 }}
-            className="card transition hover:-translate-y-1 hover:shadow-lg"
+            className="card transition hover:-translate-y-1 hover:shadow-lg select-none touch-manipulation"
           >
             <div className="w-11 h-11 rounded-full bg-secondary/20 flex items-center justify-center mb-3 text-xl">
               <Icon className="text-primary" size={20} />
